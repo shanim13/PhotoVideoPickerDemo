@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Gallery" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYI-tW-Kxa">
+                                <rect key="frame" x="20" y="84" width="179" height="42"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Choose Media">
+                                            <attributes>
+                                                <color key="NSColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="24" name="Helvetica"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="chooseButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Geo-5z-ljz"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YMB-Lu-sJf">
+                                <rect key="frame" x="30" y="276" width="354" height="436"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="4Vn-dh-3fW" appends="YES" id="MEe-EA-vnz"/>
+                                    <outletCollection property="gestureRecognizers" destination="dX2-K8-y2w" appends="YES" id="tAq-Zw-pPI"/>
+                                    <outletCollection property="gestureRecognizers" destination="AES-OD-e4T" appends="YES" id="n0b-zY-RIr"/>
+                                    <outletCollection property="gestureRecognizers" destination="B4M-SU-WTT" appends="YES" id="iIz-2M-5eO"/>
+                                </connections>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HpB-Ie-4y1">
+                                <rect key="frame" x="330" y="84" width="64" height="42"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="">
+                                    <imageReference key="image" image="trash" catalog="system" symbolScale="large"/>
+                                    <color key="baseForegroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="deleteButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="daS-ls-P7M"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ggv-m5-age">
+                                <rect key="frame" x="180" y="722" width="40" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" image="play.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="playButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hWx-4n-MVM"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="y3q-nv-9So">
+                                <rect key="frame" x="140" y="134" width="134" height="43"/>
+                                <segments>
+                                    <segment title="" image="camera" catalog="system"/>
+                                    <segment title="" image="folder" catalog="system"/>
+                                </segments>
+                                <color key="tintColor" name="AccentColor"/>
+                                <connections>
+                                    <action selector="segmentCamera:" destination="BYZ-38-t0r" eventType="valueChanged" id="MUs-LW-hWo"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="YMB-Lu-sJf" secondAttribute="bottom" constant="150" id="07Q-Bl-hi4"/>
+                            <constraint firstItem="y3q-nv-9So" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="90" id="7wE-gT-11v"/>
+                            <constraint firstItem="eYI-tW-Kxa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="OBs-pW-mfv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="y3q-nv-9So" secondAttribute="trailing" constant="140" id="Oad-rT-j9K"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HpB-Ie-4y1" secondAttribute="trailing" constant="20" id="ZGi-dE-to8"/>
+                            <constraint firstItem="YMB-Lu-sJf" firstAttribute="top" secondItem="y3q-nv-9So" secondAttribute="bottom" constant="100" id="hG1-zh-PkP"/>
+                            <constraint firstItem="y3q-nv-9So" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="140" id="hfm-bw-dSZ"/>
+                            <constraint firstItem="eYI-tW-Kxa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="lAv-YU-GdZ"/>
+                            <constraint firstItem="Ggv-m5-age" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="180" id="n5i-Fl-E3M"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YMB-Lu-sJf" secondAttribute="trailing" constant="30" id="nYX-To-JTD"/>
+                            <constraint firstItem="Ggv-m5-age" firstAttribute="top" secondItem="YMB-Lu-sJf" secondAttribute="bottom" constant="10" id="ni4-cl-rnf"/>
+                            <constraint firstItem="HpB-Ie-4y1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="oSt-EJ-RWx"/>
+                            <constraint firstItem="YMB-Lu-sJf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="oYU-Ek-7cU"/>
+                            <constraint firstItem="YMB-Lu-sJf" firstAttribute="top" secondItem="eYI-tW-Kxa" secondAttribute="bottom" constant="150" id="pHu-30-f50"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="chooseButton" destination="eYI-tW-Kxa" id="gOe-Sn-Qv7"/>
+                        <outlet property="deleteButton" destination="HpB-Ie-4y1" id="EPZ-LS-sAx"/>
+                        <outlet property="imageView" destination="YMB-Lu-sJf" id="5tl-ah-0SZ"/>
+                        <outlet property="pinchGesture" destination="AES-OD-e4T" id="1Sy-nt-94d"/>
+                        <outlet property="playButton" destination="Ggv-m5-age" id="R5Y-9Y-h7Q"/>
+                        <outlet property="rotationGesture" destination="dX2-K8-y2w" id="K7w-Fn-Ogz"/>
+                        <outlet property="segmentCamera" destination="y3q-nv-9So" id="jVw-gr-VZS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="4Vn-dh-3fW">
+                    <connections>
+                        <action selector="longPressGesture:" destination="BYZ-38-t0r" id="pbv-rn-u5x"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <rotationGestureRecognizer id="dX2-K8-y2w">
+                    <connections>
+                        <action selector="rotationGesture:" destination="BYZ-38-t0r" id="Jt6-6S-hnk"/>
+                    </connections>
+                </rotationGestureRecognizer>
+                <pinchGestureRecognizer id="AES-OD-e4T">
+                    <connections>
+                        <action selector="pinchGesture:" destination="BYZ-38-t0r" id="czO-kU-8qx"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="B4M-SU-WTT">
+                    <connections>
+                        <action selector="panGesture:" destination="BYZ-38-t0r" id="iwe-mV-oSd"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="96.428571428571431"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="camera" catalog="system" width="128" height="94"/>
+        <image name="folder" catalog="system" width="128" height="97"/>
+        <image name="play.fill" catalog="system" width="116" height="128"/>
+        <image name="trash" catalog="system" width="121" height="128"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
